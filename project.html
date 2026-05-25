@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#3B82F6',
+                            dark: '#60A5FA'
+                        },
+                        secondary: {
+                            light: '#1E40AF',
+                            dark: '#93C5FD'
+                        },
+                        accent: {
+                            light: '#10B981',
+                            dark: '#6EE7B7'
+                        },
+                        dark: {
+                            light: '#1F2937',
+                            dark: '#111827'
+                        },
+                        light: {
+                            light: '#F9FAFB',
+                            dark: '#1F2937'
+                        },
+                        bg: {
+                            light: '#F9FAFB',
+                            dark: '#111827'
+                        },
+                        text: {
+                            light: '#1F2937',
+                            dark: '#F9FAFB'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-reverse': 'float-reverse 5s ease-in-out infinite',
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        'float-reverse': {
+                            '0%, 100%': { transform: 'translateY(-10px)' },
+                            '50%': { transform: 'translateY(10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3B82F6, #10B981);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .dark .gradient-text {
+            background: linear-gradient(90deg, #60A5FA, #6EE7B7);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+        
+        .blob {
+            filter: blur(60px);
+            opacity: 0.3;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .grid-pattern {
+            background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+            background-size: 16px 16px;
+        }
+        
+        .glow {
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+        }
+        
+        .dark .glow {
+            box-shadow: 0 0 20px rgba(96, 165, 250, 0.7);
+        }
+        
+        .theme-transition * {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white/50 backdrop-blur-sm rounded-xl shadow-sm dark:bg-dark-dark/50 dark:shadow-gray-800/20">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">My <span class="gradient-text">Projects</span></h2>
+            <div class="w-20 h-1 bg-primary-light mx-auto dark:bg-primary-dark"></div>
+            <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mt-6">Here are some of my recent projects. Each one was carefully crafted to solve specific problems and deliver exceptional user experiences.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+           <!-- Project 1 -->
+            <div class="project-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md transition duration-300 hover:shadow-xl border border-gray-200 dark:border-gray-700">
+                <div class="relative overflow-hidden h-48">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80" alt="E-Commerce Platform" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition flex items-end p-6">
+                        <div>
+                            <h3 class="text-white text-xl font-bold mb-2">E-Commerce Platform</h3>
+                            <p class="text-gray-300 mb-4">A modern e-commerce solution with React, Node.js, and MongoDB.</p>
+                            <a href="#" class="inline-flex items-center px-3 py-1 bg-white text-gray-800 rounded-md text-sm font-medium hover:bg-gray-100 transition">
+                                View Project
+                                <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-xs font-medium rounded-full">React</span>
+                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 text-xs font-medium rounded-full">Node.js</span>
+                        <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 text-xs font-medium rounded-full">MongoDB</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <a href="#" class="text-primary-light dark:text-primary-dark hover:underline flex items-center">
+                            <i class="fas fa-external-link-alt mr-1 text-sm"></i>
+                            Live Demo
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            
+                      <!-- Project 2 -->
+            <div class="project-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md transition duration-300 hover:shadow-xl border border-gray-200 dark:border-gray-700">
+                <div class="relative overflow-hidden h-48">
+                    <img src="c:\Users\iitar\OneDrive\Pictures\Screenshots\Screenshot 2025-05-29 230141 - Copy.png" alt="Portfolio Template" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition flex items-end p-6">
+                        <div>
+                            <h3 class="text-white text-xl font-bold mb-2">Travel with Travel-with-iQlipse</h3>
+                            <p class="text-gray-300 mb-4">A customizable Travel with Travel-with-iQlipse template built with html Tailwind CSS and JavaScript.</p>
+                            <a href="#" class="inline-flex items-center px-3 py-1 bg-white text-gray-800 rounded-md text-sm font-medium hover:bg-gray-100 transition">
+                                View Project
+                                <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-800 dark:text-cyan-300 text-xs font-medium rounded-full">Tailwind CSS</span>
+                        <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 text-xs font-medium rounded-full">JavaScript</span>
+                        <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 text-xs font-medium rounded-full">GSAP</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <a href="file:///C:/traveling%20agency%20website/tavel.html" class="text-primary-light dark:text-primary-dark hover:underline flex items-center">
+                            <i class="fas fa-external-link-alt mr-1 text-sm"></i>
+                            Live Demo
+                        </a>
+                        <a href="https://github.com/Lpuaryan27/Travel-with-iQlipse---AI-Powered-Travel-Experiences" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            
+             <!-- Project 3 -->
+            <div class="project-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md transition duration-300 hover:shadow-xl border border-gray-200 dark:border-gray-700">
+                <div class="relative overflow-hidden h-48">
+                    <img src="c:\Users\iitar\OneDrive\Pictures\Screenshots\Screenshot 2025-07-15 213911.png" alt="Portfolio Template" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition flex items-end p-6">
+                        <div>
+                            <h3 class="text-white text-xl font-bold mb-2">Portfolio Template</h3>
+                            <p class="text-gray-300 mb-4">A customizable portfolio template built with Tailwind CSS and JavaScript.</p>
+                            <a href="file:///C:/portfilo/aryan.html" class="inline-flex items-center px-3 py-1 bg-white text-gray-800 rounded-md text-sm font-medium hover:bg-gray-100 transition">
+                                View Project
+                                <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-800 dark:text-cyan-300 text-xs font-medium rounded-full">Tailwind CSS</span>
+                        <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 text-xs font-medium rounded-full">JavaScript</span>
+                        <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 text-xs font-medium rounded-full">GSAP</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <a href="file:///C:/portfilo/aryan.html" class="text-primary-light dark:text-primary-dark hover:underline flex items-center">
+                            <i class="fas fa-external-link-alt mr-1 text-sm"></i>
+                            Live Demo
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+     
+</body>
+</html>
