@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FaLaptopCode, FaLightbulb, FaShieldAlt, FaSpaceShuttle } from 'react-icons/fa';
+import { FaLaptopCode, FaLightbulb, FaShieldAlt, FaSpaceShuttle, FaFileDownload, FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   const [ref, inView] = useInView({
@@ -64,6 +65,7 @@ const About = () => {
             <p style={{ color: 'var(--text-secondary)', marginBottom: '20px', fontSize: '1.05rem', lineHeight: '1.7' }}>
               As the founder of <a href="https://iqlipse.space" target="_blank" rel="noreferrer" style={{ color: 'var(--accent)', textDecoration: 'none', fontWeight: 600 }}>Iqlipse</a> and <a href="https://skillipse.org" target="_blank" rel="noreferrer" style={{ color: 'var(--primary)', textDecoration: 'none', fontWeight: 600 }}>Skillipse</a>, I lead initiatives aimed at empowering developers and crafting highly performant tools. I love bridging the gap between advanced backend computation and visually stunning interfaces.
             </p>
+            
             <div style={{ display: 'flex', gap: '20px', marginTop: '30px' }}>
               <div>
                 <div style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--primary)', fontFamily: 'Space Grotesk' }}>15+</div>
@@ -74,6 +76,15 @@ const About = () => {
                 <div style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--accent)', fontFamily: 'Space Grotesk' }}>2+</div>
                 <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Platforms Founded</div>
               </div>
+            </div>
+
+            <div style={{ display: 'flex', gap: '16px', marginTop: '40px' }}>
+              <Link to="/ai-career" className="btn-primary" style={{ padding: '12px 24px', fontSize: '0.9rem', borderRadius: '8px' }}>
+                Build/Download CV <FaFileDownload style={{ fontSize: '1rem' }} />
+              </Link>
+              <Link to="/ai-career" className="btn-outline" style={{ padding: '12px 24px', fontSize: '0.9rem', borderRadius: '8px' }}>
+                AI Career Compass <FaArrowRight style={{ fontSize: '0.9rem' }} />
+              </Link>
             </div>
           </motion.div>
 
