@@ -1,0 +1,15 @@
+{
+  "name": "portfolio-root",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "portfolio-react",
+    "portfolio-backend"
+  ],
+  "scripts": {
+    "dev-frontend": "npm run dev --workspace=portfolio-react",
+    "dev-backend": "npm run dev --workspace=portfolio-backend",
+    "dev": "npx concurrently \"npm run dev-frontend\" \"npm run dev-backend\"",
+    "build": "npm run build --workspace=portfolio-react"
+  }
+}

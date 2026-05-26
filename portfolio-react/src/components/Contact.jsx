@@ -29,7 +29,11 @@ const Contact = () => {
 
     try {
       // Connect to the custom Express backend server
-      const response = await axios.post('http://localhost:5000/api/contact', formData);
+      const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+        ? 'http://localhost:5000'
+        : 'https://your-backend-app-name.onrender.com'; // Replace with deployed backend URL (e.g. on Render)
+
+      const response = await axios.post(`${API_BASE_URL}/api/contact`, formData);
       if (response.data.success) {
         setStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
         setFormData({ name: '', email: '', subject: '', message: '' });
