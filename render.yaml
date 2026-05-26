@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: portfilo-backend
+    env: node
+    rootDir: portfolio-backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 5000

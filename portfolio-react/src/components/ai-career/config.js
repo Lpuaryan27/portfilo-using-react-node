@@ -5,7 +5,7 @@
 const DEV_API_URL = 'http://localhost:5000/api/ai-career';
 
 // REPLACE THIS with your deployed backend URL once you host the portfolio-backend (e.g. on Render)
-const PROD_API_URL = 'https://your-backend-app-name.onrender.com/api/ai-career';
+const PROD_API_URL = 'https://portfilo-using-react-node.onrender.com/api/ai-career';
 
 export const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
   ? DEV_API_URL
